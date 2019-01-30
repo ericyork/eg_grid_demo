@@ -1,0 +1,96 @@
+body {
+  padding: 0 2em 2em 2em;
+  margin: .5em;
+  font-family: 'Helvetica Neue', 'Arial', sans-serif;
+  border: 3px dotted green;
+  color: #333;
+}
+
+h1 {font-size: 2em;}
+h2 {font-size: 1.8em;}
+h3 {font-size: 1.6em;}
+h4 {font-size: 1.4em;}
+h5 {font-size: 1.2em;}
+h6 {font-size: 1em;}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 800;
+  margin-top: .67em;
+  margin-bottom: .67em;
+  color: #777;
+}
+p {
+  font-size: 1em;
+  margin-top: .67em;
+  margin-bottom: .67em;
+}
+/*-- ----------------
+- START GRID STYLES -
+--------------------*/
+.grid-container {
+  border: 3px dashed purple;
+  padding: 1em;
+/*-- enables grid layout--*/
+  display: grid;
+  grid-gap: 1em 2em;
+  grid-template-columns: repeat(3, 1fr);
+}
+/*-- Old Layout Method
+.grid-item {
+  display: inline-block;
+  width: 31.5%;
+  margin-right: 1em;
+}--*/
+.grid-item {
+  border: 2px solid red;
+  padding: .5em;
+  background-color: papayawhip;
+}
+
+.grid-container {
+  grid-template-areas:
+                      "head head head"
+                      "feat1 feat2 feat3"
+                      "wall blog1 blog1"
+                      "wall blog2 blog2"
+                      "wall blog3 blog3"
+                      "wall blog4 blog4"
+                      "close1 close1 close2"
+                      "foot foot foot";
+}
+.one {
+  grid-area: head;
+}
+.two {
+  grid-area: feat1;
+}
+.three {
+  grid-area: feat2;
+}
+.four {
+  grid-area: feat3;
+}
+.five {
+  grid-area: wall;
+}
+.six {
+  grid-area: blog1;
+}
+.seven {
+  grid-area: blog2;
+}
+.eight {
+  grid-area: blog3;
+}
+.nine {
+  grid-area: blog4;
+}
+.ten {
+  grid-area: close1;
+}
+.eleven {
+  grid-area: close2;
+}
+.twelve {
+  grid-area: foot;
+}
