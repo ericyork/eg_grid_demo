@@ -29,10 +29,10 @@ p {
 .grid-container {
   border: 3px dashed purple;
   padding: 1em;
-/*-- enables grid layout--*/
+/*-- enables grid layout
   display: grid;
   grid-gap: 1em 2em;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr 1fr 1fr 1fr;*/
 }
 .grid-item {
   border: 2px solid red;
@@ -50,7 +50,7 @@ p {
                       "wall blog4 blog4"
                       "close1 close1 close2"
                       "foot foot foot";
-}*/
+}
 .one {
   grid-area: head;
 }
@@ -86,10 +86,10 @@ p {
 }
 .twelve {
   grid-area: foot;
-}
-/*-- Old Layout Method
+}*/
+/*-- Old Layout Method--*/
 .grid-item {
   display: inline-block;
   width: 31.5%;
   margin-right: 1em;
-}--*/
+}
