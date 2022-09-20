@@ -36,9 +36,9 @@ i {
 }
 /*-- Regular layout method, targets children --*/
 .grid-item {
-  /*--display: block; /*-- toggle to inline and inline-block, note default whitespace --*/
-  /*--margin: auto; /*-- use margin for spacing --*/
-  /*--width: auto;  e.g. 31% or 24%, but only works with inline and inline-block --*/
+  display: block; /*-- toggle to inline and inline-block, note default whitespace --*/
+  margin: auto; /*-- use margin for spacing --*/
+  width: auto;  /*-- e.g. 31% or 24%, but only works with inline and inline-block --*/
 }
 /*--------------
 - GRID LAYOUT  -
