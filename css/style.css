@@ -10,23 +10,22 @@ Document Styles
 }
 body {
   padding: 0 2rem 2rem 2rem;
-  margin: 1rem;
-  border: 3px dotted #42f442;
+  margin: 4rem 2rem 2rem 2rem;
   color: #333;
   font-family: var(--font);
 }
-.label {
-  color: #42f442;
-  display: block;
-  margin: .25rem 0 1rem 0;
-  opacity: 0.5; /*-- sets alpha channel, accepts decimal values from 0 to 1  --*/
-}
 h1 {
-  /*-- font shorthand property: style, variant, weight, size, height, family --*/
-  font: small-caps 800 1.8rem/1.2 var(--font);
+  font: 800 1.8rem/1.2 var(--font); /*-- style, variant, weight, size/line, family --*/
   margin-top: 1rem;
-  margin-bottom: .25rem;
+  margin-bottom: .5rem;
   color: rgba(255, 0, 255, 0.7); /*-- rgba color is 0 to 255 red, green, blue, and 0 to 1 alpha --*/
+}
+h1 span {
+  font-weight: 400;
+}
+i {
+  font-weight: 700;
+  text-transform: capitalize;
 }
 /*-- children defaults --*/
 .grid-item {
@@ -37,16 +36,16 @@ h1 {
 }
 /*-- Regular layout method, targets children --*/
 .grid-item {
-  display: block; /*-- toggle to inline and inline-block, note default whitespace --*/
-  margin: auto; /*-- use margin for spacing --*/
-  width: auto; /*-- e.g. 31% or 24%, but only works with inline and inline-block --*/
+  /*--display: block; /*-- toggle to inline and inline-block, note default whitespace --*/
+  /*--margin: auto; /*-- use margin for spacing --*/
+  /*--width: auto;  e.g. 31% or 24%, but only works with inline and inline-block --*/
 }
-/*-- ----------------
-- START GRID STYLES -
---------------------*/
+/*--------------
+- GRID LAYOUT  -
+----------------*/
 .grid-container {
-  border: 3px dashed fuchsia;
-  padding: 2rem;
+  border: 2px dashed fuchsia;
+  padding: .5rem;
 /*-- enables grid layout 
   display: grid;
   grid-gap: 1em;
@@ -54,106 +53,6 @@ h1 {
   /*-- fancy way with auto-fit and minmax() 
   grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));--*/
 }
-/*
-.grid-container {
-  grid-template-areas:
-                      "head head head"
-                      "feat1 feat2 feat3"
-                      "wall blog1 blog1"
-                      "wall blog2 blog2"
-                      "wall blog3 blog3"
-                      "wall blog4 blog4"
-                      "close1 close1 close2"
-                      "foot foot foot";
-}
-.one {
-  grid-area: head;
-}
-.two {
-  grid-area: feat1;
-}
-.three {
-  grid-area: feat2;
-}
-.four {
-  grid-area: feat3;
-}
-.five {
-  grid-area: wall;
-}
-.six {
-  grid-area: blog1;
-}
-.seven {
-  grid-area: blog2;
-}
-.eight {
-  grid-area: blog3;
-}
-.nine {
-  grid-area: blog4;
-}
-.ten {
-  grid-area: close1;
-}
-.eleven {
-  grid-area: close2;
-}
-.twelve {
-  grid-area: foot;
-}
---*/
-/*-- Just a different method of selecting the same elements as above
-section {
-  display: grid;
-  grid-gap: 1rem;
-  grid-template-areas:
-                      "head head head"
-                      "feat1 feat2 feat3"
-                      "wall blog1 blog1"
-                      "wall blog2 blog2"
-                      "wall blog3 blog3"
-                      "wall blog4 blog4"
-                      "close1 close1 close2"
-                      "foot foot foot";
-}
-section p:nth-child(1) {
-  grid-area: head;
-}
-section p:nth-child(2) {
-  grid-area: feat1;
-}
-section p:nth-child(3) {
-  grid-area: feat2;
-}
-section p:nth-child(4) {
-  grid-area: feat3;
-}
-section p:nth-child(5) {
-  grid-area: wall;
-}
-section p:nth-child(6) {
-  grid-area: blog1;
-}
-section p:nth-child(7) {
-  grid-area: blog2;
-}
-section p:nth-child(8) {
-  grid-area: blog3;
-}
-section p:nth-child(9) {
-  grid-area: blog4;
-}
-section p:nth-child(10) {
-  grid-area: close1;
-}
-section p:nth-child(11) {
-  grid-area: close2;
-}
-section p:nth-child(12) {
-  grid-area: foot;
-}
---*/
 /* -- media queries for grid, note that order matters! 
 @media screen and (max-width: 1280px) {
   .grid-container {
@@ -170,3 +69,56 @@ section p:nth-child(12) {
     grid-template-columns: 1fr;
   }
 }-- */
+/*-- 
+GRID AREA LAYOUT METHOD
+---
+.grid-container {
+  display: grid;
+  grid-gap: 2rem;
+  grid-template-areas:
+                      "head head head"
+                      "feat1 feat2 feat3"
+                      "wall blog1 blog1"
+                      "wall blog2 blog2"
+                      "wall blog3 blog3"
+                      "wall blog4 blog4"
+                      "close1 close1 close2"
+                      "foot foot foot";
+}
+.grid-container > p:nth-child(1) {
+  grid-area: head;
+}
+.grid-container > p:nth-child(2) {
+  grid-area: feat1;
+}
+.grid-container > p:nth-child(3) {
+  grid-area: feat2;
+}
+.grid-container > p:nth-child(4) {
+  grid-area: feat3;
+}
+.grid-container > p:nth-child(5) {
+  grid-area: wall;
+}
+.grid-container > p:nth-child(6) {
+  grid-area: blog1;
+}
+.grid-container > p:nth-child(7) {
+  grid-area: blog2;
+}
+.grid-container > p:nth-child(8) {
+  grid-area: blog3;
+}
+.grid-container > p:nth-child(9) {
+  grid-area: blog4;
+}
+.grid-container > p:nth-child(10) {
+  grid-area: close1;
+}
+.grid-container > p:nth-child(11) {
+  grid-area: close2;
+}
+.grid-container > p:nth-child(12) {
+  grid-area: foot;
+}
+--*/
