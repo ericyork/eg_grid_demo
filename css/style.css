@@ -5,27 +5,28 @@ Document Styles
 --*/
 :root {
   --font: system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji';
-  --background: #222;
-  background-color: var(--background);
+  --charcoal: #222; /*-- sets variables under the :root element --*/
+  background-color: var(--charcoal); /*-- the var() function uses a variable --*/
 }
 body {
-  padding: 0 2rem 2rem 2rem;
-  margin: 4rem 2rem 2rem 2rem;
-  color: #333;
-  font-family: var(--font);
+  padding: 1rem;
+  margin: 2rem;
+  color: var(--charcoal); /*-- uses a variable for text color --*/
+  font-family: var(--font); /*-- uses a variable for font-family --*/
 }
 h1 {
-  font: 800 1.8rem/1.2 var(--font); /*-- style, variant, weight, size/line, family --*/
   margin-top: 1rem;
   margin-bottom: .5rem;
-  color: rgba(255, 0, 255, 0.7); /*-- rgba color is 0 to 255 red, green, blue, and 0 to 1 alpha --*/
+  font: 800 1.8rem/1.2 var(--font); /*-- style, variant, weight, size/line, family --*/
+  color: rgba(255, 0, 255, 0.67); /*-- rgba color is 0 to 255 red, green, blue, and 0 to 1 alpha --*/
 }
 h1 span {
-  font-weight: 400;
+  font-weight: 400; /*-- accepts values between 100 and 900 in increments of 100 --*/
 }
 i {
-  font-weight: 700;
-  text-transform: capitalize;
+  font-weight: 700; /*-- 700 weight is 'heavier' than 400 weight --*/
+  text-transform: capitalize; /*-- capitalizes only the first letters of words --*/
+  opacity: 0.67; /*-- sets the alpha channel value; accepts a decimal between 0 and 1 --*/
 }
 /*-- children defaults --*/
 .grid-item {
