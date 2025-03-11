@@ -44,13 +44,15 @@ em {
 ----------------*/
 .grid-container {
   border: 2px dashed fuchsia;
-/*-- enables grid layout --*/
+
+  /*-- enables grid layout --*/
   display: grid;
-  grid-gap: 1rem;
+  gap: 1rem;
   grid-template-columns: 1fr;
   grid-template-rows: 250px 100px 300px;
   justify-items: center; 
   align-items: center; 
+  
   /*-- with auto-fit and minmax() --*/
   /* grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr)); */
   /* grid-template-rows: 250px 100px 10%;
