@@ -1,5 +1,8 @@
 /*-- modern normalize --*/
-progress,sub,sup{vertical-align:baseline}*,::after,::before{box-sizing:border-box}html{font-size:62.5%;line-height:1.2;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4}body{font-size:1.6rem;margin:0;}hr{height:0;color:inherit}abbr[title]{text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace,SFMono-Regular,Consolas,'Liberation Mono',Menlo,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}::-moz-focus-inner{border-style:none;padding:0}:-moz-focusring{outline:ButtonText dotted 1px}:-moz-ui-invalid{box-shadow:none}legend{padding:0}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}img{width:100%;height:auto;user-select:none;}button{color:inherit;}a,button{touch-action: manipulation;}svg{height:100%;width:100%;fill:currentColor;pointer-events:none;}iframe,video{height:100%;width:100%}
+progress,sub,sup{vertical-align:baseline}*,::after,::before{box-sizing:border-box}html{font-size:62.5%;line-height:1.2;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4}body{font-size:1.6rem;margin:0;}hr{height:0;color:inherit}abbr[title]{text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace,SFMono-Regular,Consolas,'Liberation Mono',Menlo,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,select{text-transform:none}::-moz-focus-inner{border-style:none;padding:0}:-moz-focusring{outline:ButtonText dotted 1px}:-moz-ui-invalid{box-shadow:none}legend{padding:0}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}img{width:100%;height:auto;user-select:none;}button{color:inherit;}a,button{touch-action: manipulation;}svg{height:100%;width:100%;fill:currentColor;pointer-events:none;}iframe,video{height:100%;width:100%}
+/*-- 
+Basic Reset--*/
+html, body, div, section, main, article, aside, p, h1, h2, h3, h4, h5, h6, nav, footer, header, figure, blockquote {margin: 0;padding: 0;}
 /*-- 
 Document Styles 
 --*/
@@ -9,10 +12,9 @@ Document Styles
   background-color: var(--charcoal); /*-- the var() function uses a variable --*/
 }
 body {
-  padding: 1rem;
-  margin: 2rem;
   color: var(--charcoal); /*-- uses a variable for text color --*/
   font-family: var(--font); /*-- uses a variable for font-family --*/
+  padding: 3rem;
 }
 h1 {
   margin-top: 1rem;
@@ -23,7 +25,7 @@ h1 {
 h1 span {
   font-weight: 400; /*-- accepts values between 100 and 900 in increments of 100 --*/
 }
-i {
+em {
   font-weight: 700; /*-- 700 weight is 'heavier' than 400 weight --*/
   text-transform: capitalize; /*-- capitalizes only the first letters of words --*/
   opacity: 0.67; /*-- sets the alpha channel value; accepts a decimal between 0 and 1 --*/
@@ -36,50 +38,60 @@ i {
   margin: 1rem;
 }
 /*-- Regular layout method, targets children --*/
-.grid-item {
-  display: block; /*-- toggle to inline and inline-block, note default whitespace --*/
-  margin: auto; /*-- use margin for spacing --*/
-  width: auto;  /*-- e.g. 31% or 24%, but only works with inline and inline-block --*/
-}
+
 /*--------------
 - GRID LAYOUT  -
 ----------------*/
 .grid-container {
   border: 2px dashed fuchsia;
 /*-- enables grid layout --*/
-  /* display: grid; */
-  /* grid-gap: 1em; */
-  /* grid-template-columns: 1fr 1fr 1fr 1fr; */
+  display: grid;
+  /* grid-gap: 1rem;
+  grid-template-columns: 1fr;
+  grid-template-rows: 250px 100px 300px;
+  justify-items: center; 
+  align-items: center; 
   /*-- with auto-fit and minmax() --*/
-  /* grid-template-columns: repeat(auto-fit, minmax(90px, 1fr)); */
-  /*-- grid-template-rows: 250px 100px 10% ; --*/
+  /* grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr)); */
+  /* grid-template-rows: 250px 100px 10%;
+  align-items: stretch; */
   /*-- with minmax and auto-fill--*/
   /* grid-template-rows:
     minmax(100px, max-content)
     repeat(auto-fill, 200px) 20%;  */
 }
-/* -- media queries for grid, note that order matters! 
-@media screen and (max-width: 1280px) {
-  .grid-container {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-@media screen and (max-width: 768px) {
+/* -- media queries for grid-- 
+@media screen and (min-width: 550px) {
   .grid-container {
     grid-template-columns: repeat(2, 1fr);
   }
 }
-@media screen and (max-width: 500px) {
+@media screen and (min-width: 768px) {
   .grid-container {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(3, 1fr);
   }
-}-- */
+}
+@media screen and (min-width: 900px) {
+  .grid-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media screen and (min-width: 1280px) {
+  .grid-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media screen and (min-width: 1440px) {
+  .grid-container {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}*/
 /*-- 
 GRID AREA LAYOUT METHOD
----
+---*/
 .grid-container {
   display: grid;
-  grid-gap: 2rem;
+  grid-gap: .1rem;
   grid-template-areas:
                       "head head head"
                       "feat1 feat2 feat3"
@@ -126,4 +138,3 @@ GRID AREA LAYOUT METHOD
 .grid-container > p:nth-child(12) {
   grid-area: foot;
 }
---*/
