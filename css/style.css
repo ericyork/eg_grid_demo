@@ -46,7 +46,7 @@ em {
   border: 2px dashed fuchsia;
 /*-- enables grid layout --*/
   display: grid;
-  /* grid-gap: 1rem;
+  grid-gap: 1rem;
   grid-template-columns: 1fr;
   grid-template-rows: 250px 100px 300px;
   justify-items: center; 
@@ -60,7 +60,7 @@ em {
     minmax(100px, max-content)
     repeat(auto-fill, 200px) 20%;  */
 }
-/* -- media queries for grid-- 
+/* -- media queries for grid-- */
 @media screen and (min-width: 550px) {
   .grid-container {
     grid-template-columns: repeat(2, 1fr);
@@ -85,10 +85,10 @@ em {
   .grid-container {
     grid-template-columns: repeat(6, 1fr);
   }
-}*/
+}
 /*-- 
 GRID AREA LAYOUT METHOD
----*/
+
 .grid-container {
   display: grid;
   grid-gap: .1rem;
@@ -138,3 +138,4 @@ GRID AREA LAYOUT METHOD
 .grid-container > p:nth-child(12) {
   grid-area: foot;
 }
+ ---*/
